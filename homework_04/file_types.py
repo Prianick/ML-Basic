@@ -1,4 +1,3 @@
-from abc import abstractmethod
 from typing import Self
 from storage_types import OtusAbstractFileStorage
 from pathlib import Path

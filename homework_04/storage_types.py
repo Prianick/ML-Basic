@@ -1,5 +1,6 @@
 from abc import abstractmethod
 from typing import Self
+from file_types import AbstractFileType
 
 class SomeConfig:
     def get(self, key: str) -> str:
@@ -32,6 +33,10 @@ class OtusAbstractFileStorage:
         """Save a file to the storage."""
         print(f"Saving to {path} with content: {content}")
         pass
+
+    def save_file(self, file: AbstractFileType) -> bool:
+        """Save a file object to the storage."""
+        return self.save(file.path, file.content)
 
     @abstractmethod
     def load(self, path: str) -> str:
